@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .j {
+            position: fixed;
+            text-align: center;
+            bottom: 0;
+
+        }
+        .ą{
+            color:rgb(114, 0, 80);
+            font-family: Impact;
+            letter-spacing: 0.5mm;
+        }
+
+        .solid {
+            border-style: solid;
+        }
+    </style>
+</head>
+
+<body onload="init()">
+
+    <div>
+
+        <H1>Normalna Strona 123</H1>
+
+
+    </div>
+
+
+
+
+
+    <div id="ciastka" class="j">
+        <table class="solid">
+            <tr>
+                <td class="ą"> Klikając ten guzik akceptujesz ciastka !</td>
+
+            </tr>
+            <tr>
+                <td><button onclick="guzik()" id="button1">Akceptuj</button></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+
+
+
+
+
+
+
+
+        let ciastka = document.getElementById("ciastka");
+        let btn = document.getElementById("button1");
+        function init() {
+            let cookie = document.cookie;
+            if (cookie == 'cookieAccept: true') {
+                ciastka.style.display = 'none'
+            }
+            else {
+                ciastka.style.display = 'block'
+            }
+
+        }
+
+
+
+
+
+
+        function guzik() {
+            document.cookie = 'cookieAccept: true';
+            ciastka.style.display = 'none';
+        }
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
